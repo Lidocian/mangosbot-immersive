@@ -13,8 +13,10 @@ public:
     }
 
 public:
-    bool Initialize();
 
+    bool Initialize();
+    bool fallDamageHC;
+    float Fdamg;
     int serverPort;
     bool manualAttributes;
     float sharedXpPercent;

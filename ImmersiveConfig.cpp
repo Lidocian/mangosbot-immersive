@@ -20,6 +20,14 @@ bool ImmersiveConfig::Initialize()
         return false;
     }
 
+    fallDamageHC = config.GetBoolDefault("Immersive.FallDamageHardCore", true);
+      if (!fallDamageHC){
+        Fdamg = 14.57f;
+         sLog.outString("Falldamage changed to Normal in immersive.conf");}
+      else{
+         Fdamg = 4.57f;
+         sLog.outString("Falldamage changed to HardCore in immersive.conf");}
+
     serverPort = config.GetIntDefault("Immersive.ServerPort", 0);
     manualAttributes = config.GetBoolDefault("Immersive.ManualAttributes", true);
     sharedXpPercent = config.GetFloatDefault("Immersive.sharedXpPercent", 90.0f);
